@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "404287090751",
+    "project_id": "organicshop-c2f38",
+    "storage_bucket": "organicshop-c2f38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404287090751:android:ffcde9a6d3e6f227fd488a",
+        "android_client_info": {
+          "package_name": "com.example.organic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404287090751-699vmufnk44dtpp9uh37ehq2404jn7t6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaridsbpdh7B-StWcsI102J9UtHjwUsCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404287090751-699vmufnk44dtpp9uh37ehq2404jn7t6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
