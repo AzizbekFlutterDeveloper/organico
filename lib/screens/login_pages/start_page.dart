@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:git/constant/sizeconfige/size_config.dart';
 import 'package:git/provider/dark_vs_light_provider.dart';
+import 'package:git/provider/start_page_provider.dart';
 import 'package:git/widget/my_padding.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +11,7 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    StartProvider(context);
     var colorTexxt = context.watch<DarkVsLightProvider>().textColor;
     return Scaffold(
       body: Column(

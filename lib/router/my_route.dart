@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:git/screens/login_pages/sing_in.dart';
 import 'package:git/screens/login_pages/start_page.dart';
 
 class MyRouter {
@@ -7,6 +8,8 @@ class MyRouter {
     switch(settings.name){
       case '/':
         return MaterialPageRoute(builder: (_) => const StartPage());
+      case '/sign_in':
+        return MaterialPageRoute(builder: (_) => const SignInPage());
     }
   }
 }
