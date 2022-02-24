@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:git/screens/login_pages/sing_in.dart';
 import 'package:git/screens/login_pages/start_page.dart';
 
+import '../screens/login_pages/sign_up_page.dart';
+
 class MyRouter {
   Route? generateRoute(RouteSettings settings){
     final args = settings.arguments;
@@ -10,6 +12,8 @@ class MyRouter {
         return MaterialPageRoute(builder: (_) => const StartPage());
       case '/sign_in':
         return MaterialPageRoute(builder: (_) => const SignInPage());
+      case '/sign_up':
+        return MaterialPageRoute(builder: (_) => const SignUpPage());
     }
   }
 }

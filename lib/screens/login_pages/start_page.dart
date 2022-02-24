@@ -5,13 +5,27 @@ import 'package:git/provider/start_page_provider.dart';
 import 'package:git/widget/my_padding.dart';
 import 'package:provider/provider.dart';
 
-class StartPage extends StatelessWidget {
+import '../../widget/my_contanier.dart';
+
+class StartPage extends StatefulWidget {
   const StartPage({ Key? key }) : super(key: key);
 
   @override
+  State<StartPage> createState() => _StartPageState();
+}
+
+class _StartPageState extends State<StartPage> {
+
+
+  @override
+  void initState() {
+    StartProvider(context);
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    StartProvider(context);
+    
     var colorTexxt = context.watch<DarkVsLightProvider>().textColor;
     return Scaffold(
       body: Column(
