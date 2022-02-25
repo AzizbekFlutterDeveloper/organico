@@ -28,7 +28,9 @@ class PhoneService {
       },
     );
   }
-
+  static Future signIn(context) async{
+    AuthService.authUser.signInWithPhoneNumber(phoneController.text);
+  }
   static Future sendSms(context) async {
     AuthService.authUser.verifyPhoneNumber(
       phoneNumber: "+998"+phoneController.text,

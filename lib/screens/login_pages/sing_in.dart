@@ -111,7 +111,8 @@ class SignInPage extends StatelessWidget {
                   ),
                 ],
               ),
-              MyContainer.myContainer(
+              InkWell(
+                child: MyContainer.myContainer(
                 top: 14.0,
                 child: Center(
                   child: Text(
@@ -122,6 +123,10 @@ class SignInPage extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              onTap: (){
+                Navigator.pushNamed(context, '/home');
+              },
               ),
               InkWell(
                 child: MyContainer.myContainer(

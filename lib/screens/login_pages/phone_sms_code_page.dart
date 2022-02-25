@@ -95,7 +95,7 @@ class PhoneSmsCodePAge extends StatelessWidget {
                 ),
               ),
               onTap: (){
-                PhoneService.codesent(context,'/home');
+                PhoneService.codesent(context, Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false));
               },
             ),
           ],
