@@ -16,7 +16,7 @@ class PhoneService {
   static TextEditingController userController = TextEditingController();
   static TextEditingController passwordController = TextEditingController();
 
-  static Future codesent(context) async {
+  static Future codesent(context,name) async {
     phoneCredential = PhoneAuthProvider.credential(
       verificationId: verificationId1,
       smsCode: smsController.text,
@@ -24,14 +24,14 @@ class PhoneService {
 
     AuthService.authUser.signInWithCredential(phoneCredential!).then(
       (value) {
-        Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+       name;
       },
     );
   }
 
   static Future sendSms(context) async {
     AuthService.authUser.verifyPhoneNumber(
-      phoneNumber: phoneController.text,
+      phoneNumber: "+998"+phoneController.text,
       verificationCompleted: (v) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(

@@ -105,6 +105,9 @@ class SignInPage extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
+                    onTap: (){
+                      Navigator.pushNamed(context, '/forgot');
+                    },
                   ),
                 ],
               ),

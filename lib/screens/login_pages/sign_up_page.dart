@@ -100,7 +100,25 @@ class SignUpPage extends StatelessWidget {
                 controller: PhoneService.phoneController, 
                 keys: _phoneKey,
                 name: "Phone Number",
-                 validator: (v){
+                prefixIcon: SizedBox(
+                    width: getWidth(94),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        CircleAvatar(
+                          radius: getWidth(10),
+                          backgroundImage: const AssetImage(
+                            "assets/images/bayroq.jpg",
+                          ),
+                        ),
+                        Text(
+                          " +998",
+                          style: TextStyle(fontSize: getHeight(16)),
+                        ),
+                      ],
+                    ),
+                  ),
+                validator: (v){
                   if(PhoneService.phoneController.text.length != 13 && PhoneService.phoneController.text[0] != "+"){
                     return "";
                   }

@@ -48,7 +48,7 @@ class PhoneSmsCodePAge extends StatelessWidget {
               ),
             ),
             Text(
-              "${PhoneService.phoneController.text}",
+              "+998 ${PhoneService.phoneController.text}",
               style: TextStyle(
                 fontSize: getWidth(18),
                 fontWeight: FontWeight.w700,
@@ -95,7 +95,7 @@ class PhoneSmsCodePAge extends StatelessWidget {
                 ),
               ),
               onTap: (){
-                PhoneService.codesent(context);
+                PhoneService.codesent(context,'/home');
               },
             ),
           ],
