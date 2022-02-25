@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:git/constant/color/scaffold_color.dart';
 import 'package:git/provider/icons_provider.dart';
+import 'package:git/service/phone_number_service.dart';
 import 'package:git/widget/my_contanier.dart';
 import 'package:git/widget/my_padding.dart';
+import 'package:git/widget/text_form.dart';
 import 'package:provider/provider.dart';
 import '../../constant/sizeconfige/size_config.dart';
 import '../../provider/dark_vs_light_provider.dart';
 
 class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
-
+  SignInPage({Key? key}) : super(key: key);
+  final GlobalKey _phonekey = GlobalKey<FormState>();
+  final GlobalKey _passwordkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -50,61 +53,52 @@ class SignInPage extends StatelessWidget {
                   ),
                 ),
               ),
-              MyContainer.myContainer(
-                top: 32.0,
-                border: Border.all(color: Colors.grey),
-                color: Colors.transparent,
-                child: TextFormField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    prefixIcon: SizedBox(
-                      width: getWidth(94),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          CircleAvatar(
-                            radius: getWidth(10),
-                            backgroundImage: const AssetImage(
-                              "assets/images/bayroq.jpg",
-                            ),
-                          ),
-                          Text(" +998",
-                            style: TextStyle(
-                              fontSize: getHeight(16)
-                            ),
-                          ),
-                        ],
+              MyTextForm(
+                controller: PhoneService.phoneController,
+                keys: _phonekey,
+                prefixIcon: SizedBox(
+                  width: getWidth(94),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      CircleAvatar(
+                        radius: getWidth(10),
+                        backgroundImage: const AssetImage(
+                          "assets/images/bayroq.jpg",
+                        ),
                       ),
-                    ),
-                    hintText: " Your Phone Number",
-                    border: InputBorder.none,
+                      Text(
+                        " +998",
+                        style: TextStyle(fontSize: getHeight(16)),
+                      ),
+                    ],
                   ),
                 ),
+                name: "Your Phone Number",
               ),
-              MyContainer.myContainer(
-                top: 20.0,
-                bottom: 24.0,
-                border: Border.all(color: Colors.grey),
-                color: Colors.transparent,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    prefixIcon: Icon(Icons.lock_outline_rounded),
-                    suffixIcon: IconButton(
-                      icon: context.watch<PasswordIconsProvider>().passwordIcon == false ?  Icon(Icons.remove_red_eye) : Icon(Icons.remove_red_eye_outlined),
-                      onPressed: (){
-                        context.read<PasswordIconsProvider>().passwordIconRef();
-                      },
-                    ),
-                    hintText: "Password",
-                  ),
+              MyTextForm(
+                controller: PhoneService.passwordController,
+                keys: _passwordkey,
+                obscureText:
+                    context.watch<PasswordIconsProvider>().passwordIcon,
+                prefixIcon: Icon(Icons.lock_outline_rounded),
+                supffixIcon: IconButton(
+                  icon: context.watch<PasswordIconsProvider>().passwordIcon ==
+                          false
+                      ? Icon(Icons.visibility_off)
+                      : Icon(Icons.remove_red_eye),
+                  onPressed: () {
+                    context.read<PasswordIconsProvider>().passwordIconRef();
+                  },
                 ),
+                name: " Password",
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   InkWell(
-                    child: Text("Forgot Password",
+                    child: Text(
+                      "Forgot Password",
                       style: TextStyle(
                         color: ScaffoldColor.buttomColor,
                         fontSize: getWidth(16),
@@ -115,10 +109,10 @@ class SignInPage extends StatelessWidget {
                 ],
               ),
               MyContainer.myContainer(
-                top: 44.0,
-                bottom: 15.0,
+                top: 14.0,
                 child: Center(
-                  child: Text("Sign In",
+                  child: Text(
+                    "Sign In",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: getWidth(16),
@@ -126,22 +120,22 @@ class SignInPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  InkWell(
-                    child: Text("Sign up",
+              InkWell(
+                child: MyContainer.myContainer(
+                  top: 14.0,
+                  child: Center(
+                    child: Text(
+                      "Sign up",
                       style: TextStyle(
-                        color: ScaffoldColor.buttomColor,
+                        color: Colors.white,
                         fontSize: getWidth(16),
-                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                    onTap: (){
-                      Navigator.pushNamed(context, '/sign_up');
-                    },
                   ),
-                ],
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, '/sign_up');
+                },
               ),
             ],
           ),

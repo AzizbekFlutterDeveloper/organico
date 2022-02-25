@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:git/screens/home/home_page.dart';
+import 'package:git/screens/login_pages/phone_sms_code_page.dart';
 import 'package:git/screens/login_pages/sing_in.dart';
 import 'package:git/screens/login_pages/start_page.dart';
 
@@ -11,9 +13,13 @@ class MyRouter {
       case '/':
         return MaterialPageRoute(builder: (_) => const StartPage());
       case '/sign_in':
-        return MaterialPageRoute(builder: (_) => const SignInPage());
+        return MaterialPageRoute(builder: (_) =>  SignInPage());
       case '/sign_up':
-        return MaterialPageRoute(builder: (_) => const SignUpPage());
+        return MaterialPageRoute(builder: (_) => SignUpPage());
+      case '/code':
+        return MaterialPageRoute(builder: (_) =>  PhoneSmsCodePAge());
+      case '/home':
+        return MaterialPageRoute(builder: (_) => const HomePage());
     }
   }
 }
