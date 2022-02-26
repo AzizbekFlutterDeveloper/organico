@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:git/constant/sizeconfige/size_config.dart';
 import 'package:git/service/phone_number_service.dart';
-import 'package:git/widget/my_appbar.dart';
-import 'package:git/widget/my_contanier.dart';
+import 'package:git/widget/listTile/my_appbar.dart';
+import 'package:git/widget/contanier/my_contanier.dart';
 import 'package:git/widget/my_padding.dart';
 import 'package:git/widget/text_form.dart';
 

@@ -13,4 +13,13 @@ class MyPadding{
       child: child,
     );
   }
+
+  
 }
+Padding paddingSymmetric(
+        {required child, double horizontal = 0, double vertical = 0}) =>
+    Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: getWidth(horizontal), vertical: getHeight(vertical)),
+      child: child,
+    );

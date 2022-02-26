@@ -5,8 +5,8 @@ import 'package:git/provider/dark_vs_light_provider.dart';
 import 'package:git/provider/icons_provider.dart';
 import 'package:git/service/google_service.dart';
 import 'package:git/service/phone_number_service.dart';
-import 'package:git/widget/my_appbar.dart';
-import 'package:git/widget/my_contanier.dart';
+import 'package:git/widget/listTile/my_appbar.dart';
+import 'package:git/widget/contanier/my_contanier.dart';
 import 'package:git/widget/my_padding.dart';
 import 'package:git/widget/text_form.dart';
 import 'package:provider/provider.dart';
@@ -119,7 +119,7 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                 validator: (v){
-                  if(PhoneService.phoneController.text.length != 13 && PhoneService.phoneController.text[0] != "+"){
+                  if(PhoneService.phoneController.text.length != 9 && PhoneService.phoneController.text[0] != "+"){
                     return "";
                   }
                 },

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:git/constant/color/scaffold_color.dart';
 import 'package:git/constant/sizeconfige/size_config.dart';
-import 'package:git/widget/my_contanier.dart';
+import 'package:git/widget/contanier/my_contanier.dart';
 
 class MyTextForm extends StatelessWidget {
   var controller;

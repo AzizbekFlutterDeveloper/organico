@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:git/widget/my_appbar.dart';
+import 'package:git/widget/listTile/my_appbar.dart';
 import 'package:git/widget/my_padding.dart';
 import 'package:provider/provider.dart';
 
@@ -7,7 +7,7 @@ import '../../constant/color/scaffold_color.dart';
 import '../../constant/sizeconfige/size_config.dart';
 import '../../provider/dark_vs_light_provider.dart';
 import '../../service/phone_number_service.dart';
-import '../../widget/my_contanier.dart';
+import '../../widget/contanier/my_contanier.dart';
 import '../../widget/text_form.dart';
 
 class OTACPage extends StatelessWidget {

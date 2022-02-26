@@ -5,7 +5,7 @@ import 'package:git/provider/start_page_provider.dart';
 import 'package:git/widget/my_padding.dart';
 import 'package:provider/provider.dart';
 
-import '../../widget/my_contanier.dart';
+import '../../widget/contanier/my_contanier.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({ Key? key }) : super(key: key);
